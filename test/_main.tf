@@ -20,7 +20,6 @@ terraform {
 provider "aws" {
   region                   = "${var.region}"
   shared_credentials_file  = "${var.cred-file}"
-#  allowed_account_ids      = ["${var.account_id}"]
   profile                  = "${var.env}"
 }
 
@@ -29,8 +28,8 @@ module "vpc" {
   source    = "git::https://github.com/OlegGorj/tf-modules-aws-vpc.git?ref=dev-branch"
   namespace = "awscloud"
   stage     = "${var.env}"
-  name      = "testapp"
-  tags      = "${var.tags}"
+  name      = "testcluster"
+  tags      = {environment = "dev", terraform = "true"}
 }
 
 ###############################################################################

@@ -1,6 +1,10 @@
 
+###############################################################################
+# RESOURCES
+###############################################################################
+
 resource "aws_vpc" "default" {
-  cidr_block                       = "${var.cidr_block}"
+  cidr_block                       = "${var.cidr_block}" # "10.0.0.0/24"  # 256 IPs
   instance_tenancy                 = "${var.instance_tenancy}"
   enable_dns_hostnames             = "${var.enable_dns_hostnames}"
   enable_dns_support               = "${var.enable_dns_support}"
@@ -15,7 +19,9 @@ resource "aws_internet_gateway" "default" {
   tags   = "${var.tags}"
 }
 
-
+###############################################################################
+# Outputs
+###############################################################################
 
 output "igw_id" {
   value       = "${aws_internet_gateway.default.id}"

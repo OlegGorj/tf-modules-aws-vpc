@@ -1,5 +1,5 @@
 variable "namespace" {
-  description = "Namespace (e.g. `cp` or `cloudposse`)"
+  description = "Namespace"
   type        = "string"
 }
 
@@ -28,12 +28,12 @@ variable "attributes" {
 variable "tags" {
   type        = "map"
   default     = {}
-  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)"
+  description = "Additional tags i.e.  {env = dev, terraform = true}"
 }
 
 variable "cidr_block" {
   type        = "string"
-  description = "CIDR for the VPC"
+  description = "CIDR for the VPC. Defailt is 10.0.0.0/16 - supports 65,536 IP addresses"
   default     = "10.0.0.0/16"
 }
 
