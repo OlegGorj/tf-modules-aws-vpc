@@ -16,7 +16,9 @@ resource "aws_vpc" "default" {
 resource "aws_internet_gateway" "default" {
 
   vpc_id = "${aws_vpc.default.id}"
-  tags   = "IGW-VPC-${aws_vpc.default.id}"
+  tags = {
+    Name   = "IGW-VPC-${aws_vpc.default.id}"
+  }
 
 }
 
