@@ -25,7 +25,7 @@ provider "aws" {
 
 # call vpc module
 module "vpc" {
-  source    = "git::https://github.com/OlegGorj/tf-modules-aws-vpc.git?ref=dev-branch"
+  source    = "git::https://github.com/OlegGorj/tf-modules-aws-vpc.git?ref=master"
   namespace = "awscloud"
   stage     = "${var.env}"
   name      = "testcluster"
